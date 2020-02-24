@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(145, 167, 235);
+    background-color: #c8d6ff;
     min-height: 100vh;
     align-items: center;
     display: flex;
@@ -37,6 +37,8 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
+    box-shadow: inset 30px 30px 60px #001b6d, 
+            inset -30px -30px 60px #0029ab;
 }
 
 .gradient-circle {
@@ -46,6 +48,9 @@ body {
     z-index: 2;
     border-radius: 50%;
     position: absolute;
+    box-shadow:  15px 15px 51px #7182b7, 
+    -15px -15px 51px #b1ccff;
+    
 }
 
 .gradient-circle {
@@ -68,11 +73,13 @@ body {
   }
 
 .pointer {
-    background-color: #2a52be;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     display: block;
+    background: linear-gradient(145deg, #08e2ff, #6325ff);
+    box-shadow:  5px 5px 20px #505666, 
+    -5px -5px 20px #ffffff;
 }
 
 .pointer-container {
@@ -83,6 +90,7 @@ body {
     height: 250px;
     animation: rotate 7.5s linear forwards infinite;
     transform-origin: bottom center;
+    
 }
 
 @keyframes rotate {
@@ -91,5 +99,31 @@ body {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+.container.grow  {
+    animation: grow 3s linear forwards;
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.3);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(1);
     }
 }
